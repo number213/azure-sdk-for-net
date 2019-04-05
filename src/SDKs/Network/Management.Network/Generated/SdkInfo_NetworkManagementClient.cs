@@ -57,6 +57,7 @@ namespace Microsoft.Azure.Management.Network
                 new Tuple<string, string, string>("Network", "LoadBalancerProbes", "2018-12-01"),
                 new Tuple<string, string, string>("Network", "LoadBalancers", "2018-12-01"),
                 new Tuple<string, string, string>("Network", "LocalNetworkGateways", "2018-12-01"),
+                new Tuple<string, string, string>("Network", "NatGateways", "2018-12-01"),
                 new Tuple<string, string, string>("Network", "NetworkInterfaceIPConfigurations", "2018-12-01"),
                 new Tuple<string, string, string>("Network", "NetworkInterfaceLoadBalancers", "2018-12-01"),
                 new Tuple<string, string, string>("Network", "NetworkInterfaceTapConfigurations", "2018-12-01"),
@@ -96,16 +97,5 @@ namespace Microsoft.Azure.Management.Network
               }.AsEnumerable();
           }
       }
-      // BEGIN: Code Generation Metadata Section
-      public static readonly String AutoRestVersion = "latest";
-      public static readonly String AutoRestBootStrapperVersion = "autorest@2.0.4283";
-      public static readonly String AutoRestCmdExecuted = "cmd.exe /c autorest.cmd https://github.com/Azure/azure-rest-api-specs/blob/master/specification/network/resource-manager/readme.md --csharp --version=latest --reflect-api-versions --csharp-sdks-folder=D:\\Projects\\azure-sdk-for-net\\src\\SDKs";
-      public static readonly String GithubForkName = "Azure";
-      public static readonly String GithubBranchName = "master";
-      public static readonly String GithubCommidId = "b005d51a9eeb72d62a648056f5fc48ba85226e0d";
-      public static readonly String CodeGenerationErrors = "";
-      public static readonly String GithubRepoName = "azure-rest-api-specs";
-      // END: Code Generation Metadata Section
   }
 }
-
