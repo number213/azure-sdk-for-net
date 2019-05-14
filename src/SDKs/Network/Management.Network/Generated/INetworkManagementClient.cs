@@ -91,6 +91,16 @@ namespace Microsoft.Azure.Management.Network
         IAvailableResourceGroupDelegationsOperations AvailableResourceGroupDelegations { get; }
 
         /// <summary>
+        /// Gets the IAvailablePrivateEndpointTypesOperations.
+        /// </summary>
+        IAvailablePrivateEndpointTypesOperations AvailablePrivateEndpointTypes { get; }
+
+        /// <summary>
+        /// Gets the IAvailableResourceGroupPrivateEndpointTypesOperations.
+        /// </summary>
+        IAvailableResourceGroupPrivateEndpointTypesOperations AvailableResourceGroupPrivateEndpointTypes { get; }
+
+        /// <summary>
         /// Gets the IAzureFirewallsOperations.
         /// </summary>
         IAzureFirewallsOperations AzureFirewalls { get; }
@@ -181,9 +191,14 @@ namespace Microsoft.Azure.Management.Network
         IExpressRouteLinksOperations ExpressRouteLinks { get; }
 
         /// <summary>
-        /// Gets the IInterfaceEndpointsOperations.
+        /// Gets the IPrivateEndpointsOperations.
         /// </summary>
-        IInterfaceEndpointsOperations InterfaceEndpoints { get; }
+        IPrivateEndpointsOperations PrivateEndpoints { get; }
+
+        /// <summary>
+        /// Gets the IPrivateLinkServicesOperations.
+        /// </summary>
+        IPrivateLinkServicesOperations PrivateLinkServices { get; }
 
         /// <summary>
         /// Gets the ILoadBalancersOperations.
