@@ -114,7 +114,7 @@ namespace Microsoft.Azure.Management.Network.Models
         public string Etag { get; private set; }
 
         /// <summary>
-        /// The rule type of the rule. Valid value is: 'Community'
+        /// The rule type of the rule.
         /// </summary>
         [JsonProperty(PropertyName = "properties.routeFilterRuleType")]
         public static string RouteFilterRuleType { get; private set; }

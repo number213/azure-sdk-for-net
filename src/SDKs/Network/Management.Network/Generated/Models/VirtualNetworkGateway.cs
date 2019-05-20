@@ -42,11 +42,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="ipConfigurations">IP configurations for virtual
         /// network gateway.</param>
         /// <param name="gatewayType">The type of this virtual network gateway.
-        /// Possible values are: 'Vpn' and 'ExpressRoute'. Possible values
-        /// include: 'Vpn', 'ExpressRoute'</param>
+        /// Possible values include: 'Vpn', 'ExpressRoute'</param>
         /// <param name="vpnType">The type of this virtual network gateway.
-        /// Possible values are: 'PolicyBased' and 'RouteBased'. Possible
-        /// values include: 'PolicyBased', 'RouteBased'</param>
+        /// Possible values include: 'PolicyBased', 'RouteBased'</param>
         /// <param name="enableBgp">Whether BGP is enabled for this virtual
         /// network gateway or not.</param>
         /// <param name="activeActive">ActiveActive flag</param>
@@ -105,16 +103,14 @@ namespace Microsoft.Azure.Management.Network.Models
 
         /// <summary>
         /// Gets or sets the type of this virtual network gateway. Possible
-        /// values are: 'Vpn' and 'ExpressRoute'. Possible values include:
-        /// 'Vpn', 'ExpressRoute'
+        /// values include: 'Vpn', 'ExpressRoute'
         /// </summary>
         [JsonProperty(PropertyName = "properties.gatewayType")]
         public string GatewayType { get; set; }
 
         /// <summary>
         /// Gets or sets the type of this virtual network gateway. Possible
-        /// values are: 'PolicyBased' and 'RouteBased'. Possible values
-        /// include: 'PolicyBased', 'RouteBased'
+        /// values include: 'PolicyBased', 'RouteBased'
         /// </summary>
         [JsonProperty(PropertyName = "properties.vpnType")]
         public string VpnType { get; set; }

@@ -36,8 +36,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="name">The name of the security rule specified by the
         /// user (if created by the user).</param>
         /// <param name="protocol">The network protocol this rule applies to.
-        /// Possible values are: 'Tcp', 'Udp', and 'All'. Possible values
-        /// include: 'Tcp', 'Udp', 'All'</param>
+        /// Possible values include: 'Tcp', 'Udp', 'All'</param>
         /// <param name="sourcePortRange">The source port or range.</param>
         /// <param name="destinationPortRange">The destination port or
         /// range.</param>
@@ -103,8 +102,7 @@ namespace Microsoft.Azure.Management.Network.Models
 
         /// <summary>
         /// Gets or sets the network protocol this rule applies to. Possible
-        /// values are: 'Tcp', 'Udp', and 'All'. Possible values include:
-        /// 'Tcp', 'Udp', 'All'
+        /// values include: 'Tcp', 'Udp', 'All'
         /// </summary>
         [JsonProperty(PropertyName = "protocol")]
         public string Protocol { get; set; }

@@ -40,8 +40,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Outbound traffic is randomly load balanced across IPs in the
         /// backend IPs.</param>
         /// <param name="protocol">The protocol for the outbound rule in load
-        /// balancer. Possible values are: 'Tcp', 'Udp', and 'All'. Possible
-        /// values include: 'Tcp', 'Udp', 'All'</param>
+        /// balancer. Possible values include: 'Tcp', 'Udp', 'All'</param>
         /// <param name="id">Resource ID.</param>
         /// <param name="allocatedOutboundPorts">The number of outbound ports
         /// to be used for NAT.</param>
@@ -106,8 +105,7 @@ namespace Microsoft.Azure.Management.Network.Models
 
         /// <summary>
         /// Gets or sets the protocol for the outbound rule in load balancer.
-        /// Possible values are: 'Tcp', 'Udp', and 'All'. Possible values
-        /// include: 'Tcp', 'Udp', 'All'
+        /// Possible values include: 'Tcp', 'Udp', 'All'
         /// </summary>
         [JsonProperty(PropertyName = "properties.protocol")]
         public string Protocol { get; set; }
