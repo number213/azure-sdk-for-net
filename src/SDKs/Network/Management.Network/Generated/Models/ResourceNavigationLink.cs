@@ -35,7 +35,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="id">Resource ID.</param>
         /// <param name="linkedResourceType">Resource type of the linked
         /// resource.</param>
-        /// <param name="link">Link to the external resource</param>
+        /// <param name="link">Link to the external resource.</param>
         /// <param name="provisioningState">Provisioning state of the
         /// ResourceNavigationLink resource.</param>
         /// <param name="name">Name of the resource that is unique within a
@@ -66,7 +66,7 @@ namespace Microsoft.Azure.Management.Network.Models
         public string LinkedResourceType { get; set; }
 
         /// <summary>
-        /// Gets or sets link to the external resource
+        /// Gets or sets link to the external resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.link")]
         public string Link { get; set; }

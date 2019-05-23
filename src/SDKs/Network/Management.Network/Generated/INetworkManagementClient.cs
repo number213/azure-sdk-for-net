@@ -52,6 +52,11 @@ namespace Microsoft.Azure.Management.Network
         string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Client API version.
+        /// </summary>
+        string ApiVersion { get; }
+
+        /// <summary>
         /// The preferred language for the response.
         /// </summary>
         string AcceptLanguage { get; set; }
@@ -89,6 +94,16 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IAvailableResourceGroupDelegationsOperations.
         /// </summary>
         IAvailableResourceGroupDelegationsOperations AvailableResourceGroupDelegations { get; }
+
+        /// <summary>
+        /// Gets the IAvailablePrivateEndpointTypesOperations.
+        /// </summary>
+        IAvailablePrivateEndpointTypesOperations AvailablePrivateEndpointTypes { get; }
+
+        /// <summary>
+        /// Gets the IAvailableResourceGroupPrivateEndpointTypesOperations.
+        /// </summary>
+        IAvailableResourceGroupPrivateEndpointTypesOperations AvailableResourceGroupPrivateEndpointTypes { get; }
 
         /// <summary>
         /// Gets the IAzureFirewallsOperations.
@@ -181,9 +196,14 @@ namespace Microsoft.Azure.Management.Network
         IExpressRouteLinksOperations ExpressRouteLinks { get; }
 
         /// <summary>
-        /// Gets the IInterfaceEndpointsOperations.
+        /// Gets the IPrivateEndpointsOperations.
         /// </summary>
-        IInterfaceEndpointsOperations InterfaceEndpoints { get; }
+        IPrivateEndpointsOperations PrivateEndpoints { get; }
+
+        /// <summary>
+        /// Gets the IPrivateLinkServicesOperations.
+        /// </summary>
+        IPrivateLinkServicesOperations PrivateLinkServices { get; }
 
         /// <summary>
         /// Gets the ILoadBalancersOperations.

@@ -56,6 +56,11 @@ namespace Microsoft.Azure.Management.Network
         public string SubscriptionId { get; set; }
 
         /// <summary>
+        /// Client API version.
+        /// </summary>
+        public string ApiVersion { get; private set; }
+
+        /// <summary>
         /// The preferred language for the response.
         /// </summary>
         public string AcceptLanguage { get; set; }
@@ -92,6 +97,16 @@ namespace Microsoft.Azure.Management.Network
         /// Gets the IAvailableResourceGroupDelegationsOperations.
         /// </summary>
         public virtual IAvailableResourceGroupDelegationsOperations AvailableResourceGroupDelegations { get; private set; }
+
+        /// <summary>
+        /// Gets the IAvailablePrivateEndpointTypesOperations.
+        /// </summary>
+        public virtual IAvailablePrivateEndpointTypesOperations AvailablePrivateEndpointTypes { get; private set; }
+
+        /// <summary>
+        /// Gets the IAvailableResourceGroupPrivateEndpointTypesOperations.
+        /// </summary>
+        public virtual IAvailableResourceGroupPrivateEndpointTypesOperations AvailableResourceGroupPrivateEndpointTypes { get; private set; }
 
         /// <summary>
         /// Gets the IAzureFirewallsOperations.
@@ -184,9 +199,14 @@ namespace Microsoft.Azure.Management.Network
         public virtual IExpressRouteLinksOperations ExpressRouteLinks { get; private set; }
 
         /// <summary>
-        /// Gets the IInterfaceEndpointsOperations.
+        /// Gets the IPrivateEndpointsOperations.
         /// </summary>
-        public virtual IInterfaceEndpointsOperations InterfaceEndpoints { get; private set; }
+        public virtual IPrivateEndpointsOperations PrivateEndpoints { get; private set; }
+
+        /// <summary>
+        /// Gets the IPrivateLinkServicesOperations.
+        /// </summary>
+        public virtual IPrivateLinkServicesOperations PrivateLinkServices { get; private set; }
 
         /// <summary>
         /// Gets the ILoadBalancersOperations.
@@ -673,6 +693,8 @@ namespace Microsoft.Azure.Management.Network
             ApplicationSecurityGroups = new ApplicationSecurityGroupsOperations(this);
             AvailableDelegations = new AvailableDelegationsOperations(this);
             AvailableResourceGroupDelegations = new AvailableResourceGroupDelegationsOperations(this);
+            AvailablePrivateEndpointTypes = new AvailablePrivateEndpointTypesOperations(this);
+            AvailableResourceGroupPrivateEndpointTypes = new AvailableResourceGroupPrivateEndpointTypesOperations(this);
             AzureFirewalls = new AzureFirewallsOperations(this);
             AzureFirewallFqdnTags = new AzureFirewallFqdnTagsOperations(this);
             DdosCustomPolicies = new DdosCustomPoliciesOperations(this);
@@ -691,7 +713,8 @@ namespace Microsoft.Azure.Management.Network
             ExpressRoutePortsLocations = new ExpressRoutePortsLocationsOperations(this);
             ExpressRoutePorts = new ExpressRoutePortsOperations(this);
             ExpressRouteLinks = new ExpressRouteLinksOperations(this);
-            InterfaceEndpoints = new InterfaceEndpointsOperations(this);
+            PrivateEndpoints = new PrivateEndpointsOperations(this);
+            PrivateLinkServices = new PrivateLinkServicesOperations(this);
             LoadBalancers = new LoadBalancersOperations(this);
             LoadBalancerBackendAddressPools = new LoadBalancerBackendAddressPoolsOperations(this);
             LoadBalancerFrontendIPConfigurations = new LoadBalancerFrontendIPConfigurationsOperations(this);
@@ -820,7 +843,7 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "this.SubscriptionId");
             }
-            string apiVersion = "2019-02-01";
+            string apiVersion = "2019-04-01";
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -1018,7 +1041,7 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "virtualWANName");
             }
-            string apiVersion = "2019-02-01";
+            string apiVersion = "2019-04-01";
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
