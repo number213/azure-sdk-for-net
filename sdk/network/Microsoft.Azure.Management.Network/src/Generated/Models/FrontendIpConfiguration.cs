@@ -55,9 +55,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="publicIPPrefix">The reference of the Public IP Prefix
         /// resource.</param>
-        /// <param name="provisioningState">Gets the provisioning state of the
-        /// public IP resource. Possible values are: 'Updating', 'Deleting',
-        /// and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// frontend IP configuration resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="name">The name of the resource that is unique within
         /// the set of frontend IP configurations used by the load balancer.
         /// This name can be used to access the resource.</param>
@@ -156,8 +156,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public SubResource PublicIPPrefix { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the public IP resource. Possible
-        /// values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets or sets the provisioning state of the frontend IP
+        /// configuration resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

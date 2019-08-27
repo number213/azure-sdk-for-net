@@ -44,8 +44,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="networkInterfaces">Gets an array of references to the
         /// network interfaces created for this private endpoint.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// private endpoint. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'</param>
+        /// private endpoint resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="privateLinkServiceConnections">A grouping of
         /// information about the connection to the remote resource.</param>
         /// <param name="manualPrivateLinkServiceConnections">A grouping of
@@ -86,9 +86,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<NetworkInterface> NetworkInterfaces { get; private set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the private endpoint.
-        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
-        /// 'Failed'
+        /// Gets or sets the provisioning state of the private endpoint
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

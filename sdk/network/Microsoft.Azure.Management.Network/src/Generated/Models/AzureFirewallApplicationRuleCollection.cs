@@ -43,8 +43,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="rules">Collection of rules used by a application rule
         /// collection.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// resource. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'</param>
+        /// application rule collection resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="name">Gets name of the resource that is unique within
         /// a resource group. This name can be used to access the
         /// resource.</param>
@@ -87,8 +87,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<AzureFirewallApplicationRule> Rules { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the resource. Possible
-        /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
+        /// Gets or sets the provisioning state of the application rule
+        /// collection resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

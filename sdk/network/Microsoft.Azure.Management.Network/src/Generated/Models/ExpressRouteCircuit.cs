@@ -62,9 +62,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// circuit is provisioned on an ExpressRoutePort resource.</param>
         /// <param name="stag">The identifier of the circuit traffic. Outer tag
         /// for QinQ encapsulation.</param>
-        /// <param name="provisioningState">Gets the provisioning state of the
-        /// public IP resource. Possible values are: 'Updating', 'Deleting',
-        /// and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// express route circuit resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="gatewayManagerEtag">The GatewayManager Etag.</param>
         /// <param name="globalReachEnabled">Flag denoting Global reach
         /// status.</param>
@@ -175,8 +175,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public int? Stag { get; private set; }
 
         /// <summary>
-        /// Gets the provisioning state of the public IP resource. Possible
-        /// values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets or sets the provisioning state of the express route circuit
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

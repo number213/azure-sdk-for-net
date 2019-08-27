@@ -48,9 +48,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="circuitConnectionStatus">Express Route Circuit
         /// connection state. Possible values include: 'Connected',
         /// 'Connecting', 'Disconnected'</param>
-        /// <param name="provisioningState">Provisioning state of the circuit
-        /// connection resource. Possible values are: 'Succeeded', 'Updating',
-        /// 'Deleting', and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// express route circuit connection resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="name">Gets name of the resource that is unique within
         /// a resource group. This name can be used to access the
         /// resource.</param>
@@ -112,9 +112,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string CircuitConnectionStatus { get; set; }
 
         /// <summary>
-        /// Gets provisioning state of the circuit connection resource.
-        /// Possible values are: 'Succeeded', 'Updating', 'Deleting', and
-        /// 'Failed'.
+        /// Gets the provisioning state of the express route circuit connection
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

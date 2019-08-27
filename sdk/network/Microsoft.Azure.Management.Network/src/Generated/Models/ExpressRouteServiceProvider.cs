@@ -44,8 +44,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="peeringLocations">Get a list of peering
         /// locations.</param>
         /// <param name="bandwidthsOffered">Gets bandwidths offered.</param>
-        /// <param name="provisioningState">Gets the provisioning state of the
-        /// resource.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// express route service provider resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         public ExpressRouteServiceProvider(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<string> peeringLocations = default(IList<string>), IList<ExpressRouteServiceProviderBandwidthsOffered> bandwidthsOffered = default(IList<ExpressRouteServiceProviderBandwidthsOffered>), string provisioningState = default(string))
             : base(id, name, type, location, tags)
         {
@@ -73,7 +74,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<ExpressRouteServiceProviderBandwidthsOffered> BandwidthsOffered { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the resource.
+        /// Gets or sets the provisioning state of the express route service
+        /// provider resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

@@ -57,9 +57,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="radiusServerSecret">The radius secret property of the
         /// P2SVpnServerConfiguration resource for point to site client
         /// connection.</param>
-        /// <param name="provisioningState">The provisioning state of the
-        /// P2SVpnServerConfiguration resource. Possible values are:
-        /// 'Updating', 'Deleting', and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the P2S
+        /// VPN server configuration resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="p2SVpnGateways">List of references to
         /// P2SVpnGateways.</param>
         /// <param name="p2SVpnServerConfigurationPropertiesEtag">A unique
@@ -161,9 +161,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string RadiusServerSecret { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the P2SVpnServerConfiguration
-        /// resource. Possible values are: 'Updating', 'Deleting', and
-        /// 'Failed'.
+        /// Gets the provisioning state of the P2S VPN server configuration
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

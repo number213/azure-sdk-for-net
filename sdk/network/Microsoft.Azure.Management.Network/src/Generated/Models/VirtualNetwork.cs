@@ -51,8 +51,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="resourceGuid">The resourceGuid property of the Virtual
         /// Network resource.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// PublicIP resource. Possible values are: 'Updating', 'Deleting', and
-        /// 'Failed'.</param>
+        /// virtual network resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="enableDdosProtection">Indicates if DDoS protection is
         /// enabled for all the protected resources in the virtual network. It
         /// requires a DDoS protection plan associated with the
@@ -118,8 +118,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ResourceGuid { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the PublicIP resource.
-        /// Possible values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets or sets the provisioning state of the virtual network
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

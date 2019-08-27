@@ -66,8 +66,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="resourceGuid">The resource GUID property of the
         /// VirtualNetworkGateway resource.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// VirtualNetworkGateway resource. Possible values are: 'Updating',
-        /// 'Deleting', and 'Failed'.</param>
+        /// virtual network gateway resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
         public VirtualNetworkGateway(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<VirtualNetworkGatewayIPConfiguration> ipConfigurations = default(IList<VirtualNetworkGatewayIPConfiguration>), string gatewayType = default(string), string vpnType = default(string), bool? enableBgp = default(bool?), bool? activeActive = default(bool?), SubResource gatewayDefaultSite = default(SubResource), VirtualNetworkGatewaySku sku = default(VirtualNetworkGatewaySku), VpnClientConfiguration vpnClientConfiguration = default(VpnClientConfiguration), BgpSettings bgpSettings = default(BgpSettings), AddressSpace customRoutes = default(AddressSpace), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
@@ -171,8 +171,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ResourceGuid { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the VirtualNetworkGateway resource.
-        /// Possible values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets the provisioning state of the virtual network gateway
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

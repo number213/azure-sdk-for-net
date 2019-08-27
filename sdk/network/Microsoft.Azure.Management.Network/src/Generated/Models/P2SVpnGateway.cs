@@ -41,9 +41,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="tags">Resource tags.</param>
         /// <param name="virtualHub">The VirtualHub to which the gateway
         /// belongs.</param>
-        /// <param name="provisioningState">The provisioning state of the
-        /// resource. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'</param>
+        /// <param name="provisioningState">The provisioning state of the P2S
+        /// VPN gateway resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="vpnGatewayScaleUnit">The scale unit for this p2s vpn
         /// gateway.</param>
         /// <param name="p2SVpnServerConfiguration">The
@@ -85,8 +85,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public SubResource VirtualHub { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the resource. Possible
-        /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
+        /// Gets or sets the provisioning state of the P2S VPN gateway
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

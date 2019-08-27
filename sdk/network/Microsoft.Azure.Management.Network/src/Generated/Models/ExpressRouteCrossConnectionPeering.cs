@@ -52,9 +52,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="vlanId">The VLAN ID.</param>
         /// <param name="microsoftPeeringConfig">The Microsoft peering
         /// configuration.</param>
-        /// <param name="provisioningState">Gets the provisioning state of the
-        /// public IP resource. Possible values are: 'Updating', 'Deleting',
-        /// and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// express route cross connection peering resource. Possible values
+        /// include: 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="gatewayManagerEtag">The GatewayManager Etag.</param>
         /// <param name="lastModifiedBy">Gets whether the provider or the
         /// customer last modified the peering.</param>
@@ -162,8 +162,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public ExpressRouteCircuitPeeringConfig MicrosoftPeeringConfig { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the public IP resource. Possible
-        /// values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets the provisioning state of the express route cross connection
+        /// peering resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

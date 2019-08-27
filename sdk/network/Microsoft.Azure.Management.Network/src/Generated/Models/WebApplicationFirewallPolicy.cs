@@ -47,8 +47,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// policy.</param>
         /// <param name="applicationGateways">A collection of references to
         /// application gateways.</param>
-        /// <param name="provisioningState">Provisioning state of the
-        /// WebApplicationFirewallPolicy.</param>
+        /// <param name="provisioningState">The provisioning state of the web
+        /// application firewall policy resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="resourceState">Resource status of the policy.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
@@ -88,7 +89,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<ApplicationGateway> ApplicationGateways { get; private set; }
 
         /// <summary>
-        /// Gets provisioning state of the WebApplicationFirewallPolicy.
+        /// Gets the provisioning state of the web application firewall policy
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

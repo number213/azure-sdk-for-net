@@ -43,9 +43,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// backend address pool.</param>
         /// <param name="outboundRules">Gets outbound rules that use this
         /// backend address pool.</param>
-        /// <param name="provisioningState">Get provisioning state of the
-        /// public IP resource. Possible values are: 'Updating', 'Deleting',
-        /// and 'Failed'.</param>
+        /// <param name="provisioningState">The provisioning state of the
+        /// backend address pool resource. Possible values include:
+        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="name">Gets name of the resource that is unique within
         /// the set of backend address pools used by the load balancer. This
         /// name can be used to access the resource.</param>
@@ -97,8 +97,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<SubResource> OutboundRules { get; private set; }
 
         /// <summary>
-        /// Gets or sets get provisioning state of the public IP resource.
-        /// Possible values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets or sets the provisioning state of the backend address pool
+        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

@@ -44,8 +44,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="primary">Whether the ip configuration is primary or
         /// not.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// private link service ip configuration. Possible values include:
-        /// 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
+        /// private link service IP configuration resource. Possible values
+        /// include: 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="privateIPAddressVersion">Available from Api-Version
         /// 2016-03-30 onwards, it represents whether the specific
         /// ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible
@@ -101,9 +101,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public bool? Primary { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the private link service ip
-        /// configuration. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'
+        /// Gets or sets the provisioning state of the private link service IP
+        /// configuration resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

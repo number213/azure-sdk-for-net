@@ -47,9 +47,9 @@ namespace Microsoft.Azure.Management.Network.Models
         /// collections used by Azure Firewall.</param>
         /// <param name="ipConfigurations">IP configuration of the Azure
         /// Firewall resource.</param>
-        /// <param name="provisioningState">The provisioning state of the
-        /// resource. Possible values include: 'Succeeded', 'Updating',
-        /// 'Deleting', 'Failed'</param>
+        /// <param name="provisioningState">The provisioning state of the Azure
+        /// firewall resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="threatIntelMode">The operation mode for Threat
         /// Intelligence. Possible values include: 'Alert', 'Deny',
         /// 'Off'</param>
@@ -113,8 +113,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<AzureFirewallIPConfiguration> IpConfigurations { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the resource. Possible
-        /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
+        /// Gets or sets the provisioning state of the Azure firewall resource.
+        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

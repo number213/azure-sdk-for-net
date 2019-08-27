@@ -48,8 +48,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="addressSpace">The AddressSpace that contains an array
         /// of IP address ranges.</param>
         /// <param name="bgpProperties">The set of bgp properties.</param>
-        /// <param name="provisioningState">The provisioning state of the
-        /// resource. Possible values include: 'Succeeded', 'Updating',
+        /// <param name="provisioningState">The provisioning state of the VPN
+        /// site resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
         /// <param name="isSecuritySite">IsSecuritySite flag.</param>
         /// <param name="vpnSiteLinks">List of all vpn site links</param>
@@ -114,8 +114,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public BgpSettings BgpProperties { get; set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the resource. Possible
-        /// values include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
+        /// Gets or sets the provisioning state of the VPN site resource.
+        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

@@ -65,7 +65,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// of use for this subnet based on delegations and other user-defined
         /// properties.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// resource.</param>
+        /// subnet resource. Possible values include: 'Succeeded', 'Updating',
+        /// 'Deleting', 'Failed'</param>
         /// <param name="privateEndpointNetworkPolicies">Enable or Disable
         /// apply network policies on private end point in the subnet.</param>
         /// <param name="privateLinkServiceNetworkPolicies">Enable or Disable
@@ -194,7 +195,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string Purpose { get; private set; }
 
         /// <summary>
-        /// Gets or sets the provisioning state of the resource.
+        /// Gets or sets the provisioning state of the subnet resource.
+        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; set; }

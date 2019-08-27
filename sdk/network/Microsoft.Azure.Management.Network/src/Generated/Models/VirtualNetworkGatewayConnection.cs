@@ -73,8 +73,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="resourceGuid">The resource GUID property of the
         /// VirtualNetworkGatewayConnection resource.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// VirtualNetworkGatewayConnection resource. Possible values are:
-        /// 'Updating', 'Deleting', and 'Failed'.</param>
+        /// virtual network gateway connection resource. Possible values
+        /// include: 'Succeeded', 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="expressRouteGatewayBypass">Bypass ExpressRoute Gateway
         /// for data forwarding.</param>
         /// <param name="etag">Gets a unique read-only string that changes
@@ -218,9 +218,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ResourceGuid { get; set; }
 
         /// <summary>
-        /// Gets the provisioning state of the VirtualNetworkGatewayConnection
-        /// resource. Possible values are: 'Updating', 'Deleting', and
-        /// 'Failed'.
+        /// Gets the provisioning state of the virtual network gateway
+        /// connection resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }

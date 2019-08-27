@@ -45,8 +45,8 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="resourceGuid">The resourceGuid property of the virtual
         /// network tap.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// virtual network tap. Possible values are: 'Updating', 'Deleting',
-        /// and 'Failed'.</param>
+        /// virtual network tap resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="destinationNetworkInterfaceIPConfiguration">The
         /// reference to the private IP Address of the collector nic that will
         /// receive the tap.</param>
@@ -89,8 +89,9 @@ namespace Microsoft.Azure.Management.Network.Models
         public string ResourceGuid { get; private set; }
 
         /// <summary>
-        /// Gets the provisioning state of the virtual network tap. Possible
-        /// values are: 'Updating', 'Deleting', and 'Failed'.
+        /// Gets the provisioning state of the virtual network tap resource.
+        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }
