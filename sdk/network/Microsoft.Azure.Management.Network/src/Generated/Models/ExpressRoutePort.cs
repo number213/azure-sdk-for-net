@@ -59,10 +59,10 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="circuits">Reference the ExpressRoute circuit(s) that
         /// are provisioned on this ExpressRoutePort resource.</param>
         /// <param name="provisioningState">The provisioning state of the
-        /// ExpressRoutePort resource. Possible values are: 'Succeeded',
-        /// 'Updating', 'Deleting', and 'Failed'.</param>
+        /// express route port resource. Possible values include: 'Succeeded',
+        /// 'Updating', 'Deleting', 'Failed'</param>
         /// <param name="resourceGuid">The resource GUID property of the
-        /// ExpressRoutePort resource.</param>
+        /// express route port resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
         public ExpressRoutePort(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string peeringLocation = default(string), int? bandwidthInGbps = default(int?), double? provisionedBandwidthInGbps = default(double?), string mtu = default(string), string encapsulation = default(string), string etherType = default(string), string allocationDate = default(string), IList<ExpressRouteLink> links = default(IList<ExpressRouteLink>), IList<SubResource> circuits = default(IList<SubResource>), string provisioningState = default(string), string resourceGuid = default(string), string etag = default(string))
@@ -150,15 +150,15 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<SubResource> Circuits { get; private set; }
 
         /// <summary>
-        /// Gets the provisioning state of the ExpressRoutePort resource.
-        /// Possible values are: 'Succeeded', 'Updating', 'Deleting', and
-        /// 'Failed'.
+        /// Gets the provisioning state of the express route port resource.
+        /// Possible values include: 'Succeeded', 'Updating', 'Deleting',
+        /// 'Failed'
         /// </summary>
         [JsonProperty(PropertyName = "properties.provisioningState")]
         public string ProvisioningState { get; private set; }
 
         /// <summary>
-        /// Gets or sets the resource GUID property of the ExpressRoutePort
+        /// Gets or sets the resource GUID property of the express route port
         /// resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.resourceGuid")]
