@@ -52,9 +52,19 @@ namespace Microsoft.Azure.Management.Network
         string SubscriptionId { get; set; }
 
         /// <summary>
+        /// The name of the resource group.
+        /// </summary>
+        string ResourceGroupName { get; set; }
+
+        /// <summary>
         /// Client API version.
         /// </summary>
         string ApiVersion { get; }
+
+        /// <summary>
+        /// The name of the virtual router.
+        /// </summary>
+        string VirtualRouterName { get; set; }
 
         /// <summary>
         /// The preferred language for the response.

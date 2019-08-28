@@ -27,18 +27,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the peering.
             /// </param>
-            public static void Delete(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName)
+            public static void Delete(this IVirtualRouterPeeringsOperations operations, string peeringName)
             {
-                operations.DeleteAsync(resourceGroupName, virtualRouterName, peeringName).GetAwaiter().GetResult();
+                operations.DeleteAsync(peeringName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -47,21 +41,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the peering.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(peeringName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -69,19 +57,13 @@ namespace Microsoft.Azure.Management.Network
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
             /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
             /// </param>
-            public static VirtualRouterPeering Get(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName)
+            public static VirtualRouterPeering Get(this IVirtualRouterPeeringsOperations operations, string peeringName)
             {
-                return operations.GetAsync(resourceGroupName, virtualRouterName, peeringName).GetAwaiter().GetResult();
+                return operations.GetAsync(peeringName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -89,12 +71,6 @@ namespace Microsoft.Azure.Management.Network
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
             /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
@@ -102,9 +78,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouterPeering> GetAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouterPeering> GetAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(peeringName, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -116,21 +92,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The resource group name of the Virtual Router Peering.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering being updated.
             /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to update Virtual Router Peering operation.
             /// </param>
-            public static VirtualRouterPeering Update(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters)
+            public static VirtualRouterPeering Update(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters)
             {
-                return operations.UpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters).GetAwaiter().GetResult();
+                return operations.UpdateAsync(peeringName, parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -139,12 +109,6 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The resource group name of the Virtual Router Peering.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering being updated.
             /// </param>
@@ -154,9 +118,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouterPeering> UpdateAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouterPeering> UpdateAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -168,12 +132,6 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
             /// </param>
@@ -181,9 +139,9 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the create or update Virtual Router Peering
             /// operation.
             /// </param>
-            public static VirtualRouterPeering CreateOrUpdate(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters)
+            public static VirtualRouterPeering CreateOrUpdate(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters)
             {
-                return operations.CreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(peeringName, parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -191,12 +149,6 @@ namespace Microsoft.Azure.Management.Network
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
             /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
@@ -208,9 +160,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouterPeering> CreateOrUpdateAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouterPeering> CreateOrUpdateAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -222,15 +174,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
-            public static IPage<VirtualRouterPeering> ListByResourceGroup(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName)
+            public static IPage<VirtualRouterPeering> ListByResourceGroup(this IVirtualRouterPeeringsOperations operations)
             {
-                return operations.ListByResourceGroupAsync(resourceGroupName, virtualRouterName).GetAwaiter().GetResult();
+                return operations.ListByResourceGroupAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -239,18 +185,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<VirtualRouterPeering>> ListByResourceGroupAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<VirtualRouterPeering>> ListByResourceGroupAsync(this IVirtualRouterPeeringsOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListByResourceGroupWithHttpMessagesAsync(resourceGroupName, virtualRouterName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListByResourceGroupWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -262,18 +202,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the peering.
             /// </param>
-            public static void BeginDelete(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName)
+            public static void BeginDelete(this IVirtualRouterPeeringsOperations operations, string peeringName)
             {
-                operations.BeginDeleteAsync(resourceGroupName, virtualRouterName, peeringName).GetAwaiter().GetResult();
+                operations.BeginDeleteAsync(peeringName).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -282,21 +216,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='peeringName'>
             /// The name of the peering.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.BeginDeleteWithHttpMessagesAsync(peeringName, null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -304,12 +232,6 @@ namespace Microsoft.Azure.Management.Network
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
             /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
@@ -318,9 +240,9 @@ namespace Microsoft.Azure.Management.Network
             /// Parameters supplied to the create or update Virtual Router Peering
             /// operation.
             /// </param>
-            public static VirtualRouterPeering BeginCreateOrUpdate(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters)
+            public static VirtualRouterPeering BeginCreateOrUpdate(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters)
             {
-                return operations.BeginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, peeringName, parameters).GetAwaiter().GetResult();
+                return operations.BeginCreateOrUpdateAsync(peeringName, parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -328,12 +250,6 @@ namespace Microsoft.Azure.Management.Network
             /// </summary>
             /// <param name='operations'>
             /// The operations group for this extension method.
-            /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
             /// </param>
             /// <param name='peeringName'>
             /// The name of the Virtual Router Peering.
@@ -345,9 +261,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouterPeering> BeginCreateOrUpdateAsync(this IVirtualRouterPeeringsOperations operations, string resourceGroupName, string virtualRouterName, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouterPeering> BeginCreateOrUpdateAsync(this IVirtualRouterPeeringsOperations operations, string peeringName, VirtualRouterPeering parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(peeringName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

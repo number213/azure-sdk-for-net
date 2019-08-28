@@ -27,15 +27,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
-            public static void Delete(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName)
+            public static void Delete(this IVirtualRoutersOperations operations)
             {
-                operations.DeleteAsync(resourceGroupName, virtualRouterName).GetAwaiter().GetResult();
+                operations.DeleteAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -44,18 +38,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task DeleteAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task DeleteAsync(this IVirtualRoutersOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.DeleteWithHttpMessagesAsync(resourceGroupName, virtualRouterName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.DeleteWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -64,18 +52,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='expand'>
             /// Expands referenced resources.
             /// </param>
-            public static VirtualRouter Get(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, string expand = default(string))
+            public static VirtualRouter Get(this IVirtualRoutersOperations operations, string expand = default(string))
             {
-                return operations.GetAsync(resourceGroupName, virtualRouterName, expand).GetAwaiter().GetResult();
+                return operations.GetAsync(expand).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -84,21 +66,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='expand'>
             /// Expands referenced resources.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouter> GetAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, string expand = default(string), CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouter> GetAsync(this IVirtualRoutersOperations operations, string expand = default(string), CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.GetWithHttpMessagesAsync(resourceGroupName, virtualRouterName, expand, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GetWithHttpMessagesAsync(expand, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -110,18 +86,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The resource group name of the Virtual Router.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router being updated.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to Update Virtual Router Tags.
             /// </param>
-            public static VirtualRouter Update(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, TagsObject parameters)
+            public static VirtualRouter Update(this IVirtualRoutersOperations operations, TagsObject parameters)
             {
-                return operations.UpdateAsync(resourceGroupName, virtualRouterName, parameters).GetAwaiter().GetResult();
+                return operations.UpdateAsync(parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -130,21 +100,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The resource group name of the Virtual Router.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router being updated.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to Update Virtual Router Tags.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouter> UpdateAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, TagsObject parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouter> UpdateAsync(this IVirtualRoutersOperations operations, TagsObject parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.UpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.UpdateWithHttpMessagesAsync(parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -156,18 +120,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to the create or update Virtual Router.
             /// </param>
-            public static VirtualRouter CreateOrUpdate(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, VirtualRouter parameters)
+            public static VirtualRouter CreateOrUpdate(this IVirtualRoutersOperations operations, VirtualRouter parameters)
             {
-                return operations.CreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters).GetAwaiter().GetResult();
+                return operations.CreateOrUpdateAsync(parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -176,21 +134,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to the create or update Virtual Router.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouter> CreateOrUpdateAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, VirtualRouter parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouter> CreateOrUpdateAsync(this IVirtualRoutersOperations operations, VirtualRouter parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.CreateOrUpdateWithHttpMessagesAsync(parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -202,12 +154,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            public static IPage<VirtualRouter> ListByResourceGroup(this IVirtualRoutersOperations operations, string resourceGroupName)
+            public static IPage<VirtualRouter> ListByResourceGroup(this IVirtualRoutersOperations operations)
             {
-                return operations.ListByResourceGroupAsync(resourceGroupName).GetAwaiter().GetResult();
+                return operations.ListByResourceGroupAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -216,15 +165,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<IPage<VirtualRouter>> ListByResourceGroupAsync(this IVirtualRoutersOperations operations, string resourceGroupName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<IPage<VirtualRouter>> ListByResourceGroupAsync(this IVirtualRoutersOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.ListByResourceGroupWithHttpMessagesAsync(resourceGroupName, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ListByResourceGroupWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -264,15 +210,9 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
-            public static void BeginDelete(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName)
+            public static void BeginDelete(this IVirtualRoutersOperations operations)
             {
-                operations.BeginDeleteAsync(resourceGroupName, virtualRouterName).GetAwaiter().GetResult();
+                operations.BeginDeleteAsync().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -281,18 +221,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task BeginDeleteAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task BeginDeleteAsync(this IVirtualRoutersOperations operations, CancellationToken cancellationToken = default(CancellationToken))
             {
-                (await operations.BeginDeleteWithHttpMessagesAsync(resourceGroupName, virtualRouterName, null, cancellationToken).ConfigureAwait(false)).Dispose();
+                (await operations.BeginDeleteWithHttpMessagesAsync(null, cancellationToken).ConfigureAwait(false)).Dispose();
             }
 
             /// <summary>
@@ -301,18 +235,12 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to the create or update Virtual Router.
             /// </param>
-            public static VirtualRouter BeginCreateOrUpdate(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, VirtualRouter parameters)
+            public static VirtualRouter BeginCreateOrUpdate(this IVirtualRoutersOperations operations, VirtualRouter parameters)
             {
-                return operations.BeginCreateOrUpdateAsync(resourceGroupName, virtualRouterName, parameters).GetAwaiter().GetResult();
+                return operations.BeginCreateOrUpdateAsync(parameters).GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -321,21 +249,15 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='operations'>
             /// The operations group for this extension method.
             /// </param>
-            /// <param name='resourceGroupName'>
-            /// The name of the resource group.
-            /// </param>
-            /// <param name='virtualRouterName'>
-            /// The name of the Virtual Router.
-            /// </param>
             /// <param name='parameters'>
             /// Parameters supplied to the create or update Virtual Router.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async Task<VirtualRouter> BeginCreateOrUpdateAsync(this IVirtualRoutersOperations operations, string resourceGroupName, string virtualRouterName, VirtualRouter parameters, CancellationToken cancellationToken = default(CancellationToken))
+            public static async Task<VirtualRouter> BeginCreateOrUpdateAsync(this IVirtualRoutersOperations operations, VirtualRouter parameters, CancellationToken cancellationToken = default(CancellationToken))
             {
-                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(resourceGroupName, virtualRouterName, parameters, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginCreateOrUpdateWithHttpMessagesAsync(parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
